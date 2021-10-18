@@ -3,6 +3,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.loginForm {
+    display: block;
+}
+
+.signupForm{
+    display: none;
+}
+
 /* Bordered form */
 form {
     margin-left: auto;
@@ -16,7 +24,7 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text],
+input[type=email],
 input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -68,23 +76,5 @@ img.avatar {
 /* Add padding to containers */
 .container {
     padding: 16px;
-    overflow: hidden;
-}
-
-/* The "Forgot password" text */
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-
-    .cancelbtn {
-        width: 100%;
-    }
+    overflow: auto;
 }

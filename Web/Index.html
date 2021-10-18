@@ -8,31 +8,62 @@
 </head>
 
 <body>
-    <div class="Login form">
+    <div id="login" class="loginForm">
         <form action="action_page.php" method="post">
             <div class="title">
                 <h1>Student Life</h1>
             </div>
 
             <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="email"><b>Username</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
 
-                <button onclick="window.location.href='http://127.0.0.1:5500/Pages/Home.html';">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
+
+                <button type="submit">Login</button>
+                <button onclick="openSignup()">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="signup" class="signupForm">
+        <form class="modal-content" action="/action_page.php">
+            <div class="title">
+                <h1>Sign Up</h1>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <button type="submit" class="signup">Sign Up</button>
+                <button type="button" onclick="closeSignup()" class="cancelbtn">Go back</button>
             </div>
         </form>
     </div>
 </body>
+
+<script>
+    function openSignup() {
+        document.getElementById("login").style.display = 'none';
+        document.getElementById("signup").style.display = 'block';
+    }
+
+    function closeSignup() {
+        document.getElementById("login").style.display = 'block';
+        document.getElementById("signup").style.display = 'none';
+    }
+</script>
 
 </html>
