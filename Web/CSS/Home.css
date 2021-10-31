@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: rgb(33, 32, 46);
 }
 
 * {
@@ -9,129 +10,78 @@ body {
     text-decoration: none;
 }
 
-.mainBody {
-    width: 100%;
+li {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background: rgb(65, 65, 65);
+}
+
+
+.topArea {
     height: 100%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    background: rgb(78, 78, 78);
+}
+
+.leftHeader {
+    float: left;
     display: flex;
 }
 
-.centerBar {
-    min-width: 400px;
-    width: 100%;
-}
-
-.centerBar header {
-    text-align: center;
-    font-size: 22px;
-    width: 100%;
-    line-height: 70px;
-    border: 2px solid;
-    box-sizing: border-box;
-    user-select: none;
-    color: white;
-    background: coral;
-}
-
-
-/* Left Sidebar */
-
-.sidebarLeft {
-    float: left;
-    width: 230px;
-    height: 100%;
-    background: lightcoral;
-}
-
-.sidebarLeft header {
-    text-align: center;
-    font-size: 22px;
-    line-height: 70px;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    box-sizing: border-box;
-    user-select: none;
-    color: white;
-    background: coral;
-}
-
-.sidebarLeft ul a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 65px;
-    font-size: 20px;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    border-bottom: 2px solid;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-ul li:hover a {
-    padding-left: 30px;
-}
-
-
-/* Right Sidebar */
-
-.sidebarRight {
+.rightHeader {
     float: right;
-    min-width: 260px;
-    max-width: 280px;
-    width: 20%;
-    height: 100%;
-    background: lightcoral;
-}
-
-.sidebarRight header {
-    text-align: center;
-    font-size: 22px;
-    line-height: 70px;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    box-sizing: border-box;
-    user-select: none;
-    color: white;
-    background: coral;
-}
-
-.sidebarRight ul {
-    display: block;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.profileCard {
     display: flex;
-    box-sizing: border-box;
-    border-bottom: 2px solid;
-    color: white;
-    background: rgb(0, 0, 0, 0.2);
 }
 
-.profilePicture {
-    float: left;
-    margin: 5px;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: wheat;
+.table {
+    height: 90%;
+    width: 100%;
+    bottom: 0px;
+    display: table;
+    position: absolute;
+    border-spacing: 10px;
 }
 
-.profileInfo {
-    float: left;
-    margin: 5px;
-    overflow: hidden;
-    color: greenyellow;
+.table div {
+    display: table-cell;
 }
 
-.profileInfo h3 {
-    width: 178px;
-    background: none;
-    overflow: hidden;
-    color: white;
+.leftArea {
+    min-width: 220px;
+    width: 15%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgb(78, 78, 78);
+}
+
+.centerArea {
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgb(78, 78, 78);
+}
+
+.rightArea {
+    min-width: 220px;
+    width: 15%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgb(78, 78, 78);
+}
+
+.centerArea input {
+    bottom: 0px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    position: absolute;
+    background: rgb(65, 65, 65);
 }
