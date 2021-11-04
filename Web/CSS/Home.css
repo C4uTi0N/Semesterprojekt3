@@ -4,6 +4,7 @@ body {
 }
 
 * {
+    color: white;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -20,21 +21,27 @@ li {
 
 .topArea {
     height: 100%;
-    text-align: center;
     margin: 10px;
     padding: 10px;
     display: flex;
     border-radius: 20px;
+    overflow: hidden;
     background: rgb(78, 78, 78);
 }
 
+.topArea li:hover {
+    background: grey;
+}
+
+.topArea h1 {
+    margin-left: 50%;
+}
+
 .leftHeader {
-    float: left;
     display: flex;
 }
 
 .rightHeader {
-    float: right;
     display: flex;
 }
 
@@ -53,11 +60,20 @@ li {
 
 .leftArea {
     min-width: 220px;
+    max-width: 300px;
     width: 15%;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     background: rgb(78, 78, 78);
+}
+
+.leftArea li {
+    padding: 20px;
+}
+
+.leftArea li:hover {
+    background: gray;
 }
 
 .centerArea {
@@ -72,10 +88,19 @@ li {
     min-width: 220px;
     width: 15%;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     background: rgb(78, 78, 78);
 }
+
+.rightArea li {
+    max-width: 280px;
+    margin-top: 10px;
+    padding: 7px;
+    display: flex;
+    overflow: hidden;
+}
+
 
 .centerArea input {
     bottom: 0px;
@@ -84,4 +109,17 @@ li {
     border-radius: 20px;
     position: absolute;
     background: rgb(65, 65, 65);
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    background: orange;
+    border-radius: 50%;
+}
+
+.profileList li {
+    line-height: 2px;
+    white-space: nowrap;
+    overflow: hidden;
 }
