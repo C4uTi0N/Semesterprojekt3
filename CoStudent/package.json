@@ -1,0 +1,12 @@
+{
+  "name": "CoStudent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.4",
+    "socket.io": "^2.4.1"
+  }
+}

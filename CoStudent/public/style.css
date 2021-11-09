@@ -1,0 +1,174 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333
+}
+
+p {
+  padding: 10px;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#headerwrap {
+  float: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #eb521f;
+  background: #FF6633;
+}
+
+#contentwrap {
+  width: 70%;
+  float: left;
+  margin: 0 auto;
+}
+
+#content {
+  height: 810px;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #ebb0b0;
+  background: #FFC4C4;
+}
+
+#leftcolumnwrap {
+  float: left;
+  width: 15%;
+  min-width: 220px;
+  margin: 0 auto;
+}
+
+#leftcolumn {
+  height: 810px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #1fb8eb;
+  background: #33CCFF;
+}
+
+#rightcolumnwrap {
+  float: left;
+  width: 15%;
+  min-width: 220px;
+  margin: 0 auto;
+}
+
+#rightcolumn {
+  height: 810px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #b81feb;
+  background: #CC33FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+#leftcolumn button {
+  margin: 5px;
+  padding: 10px;
+  background: orange;
+  border-radius: 25px;
+}
+
+.chat {
+  height: 755px;
+}
+
+.chatInputs {
+  display: inline-flex;
+}
+
+.chat button {
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.chat input {
+  width: 500px;
+  height: 50px;
+  margin-top: 5px;
+  overflow: scroll;
+  border-radius: 25px;
+  padding: 8px;
+}
+
+.messages {
+  width: 1310px;
+  height: 685px;
+  padding: 10px;
+  line-height: 20px;
+  overflow-y: scroll;
+  border-radius: 20px;
+  display: block;
+  background: lightslategray;
+}
+
+#message {
+  font-size: 16px;
+  margin: 4px;
+  padding: 10px;
+  border-radius: 25px;
+  background: lightsteelblue;
+}
+
+#chat1 {
+  visibility: visible;
+  position: absolute;
+;}
+
+#chat2 {
+  visibility: hidden;
+  position: absolute;
+}
+
+#chat3 {
+  visibility: hidden;
+  position: absolute;
+}
+
+#chat4 {
+  visibility: hidden;
+  position: absolute;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+}
+.messages::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  border-radius: 10px;
+}
