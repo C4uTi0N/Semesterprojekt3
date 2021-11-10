@@ -103,11 +103,13 @@
                 }
             });
 
+            console.log(chatId);
             $(chatId).submit(function (event) {
                 event.preventDefault();
+                console.log(event);
 
-                var user = $('input[name=username]').val();
-                var message = $('input[name=message]').val();
+                var user = $(chatId + ' input[name=username]').val();
+                var message = $(chatId + ' input[name=message]').val();
 
                 if (user.length && message.length) {
                     var messageObject = {

@@ -25,9 +25,9 @@ io.on('connection', socket => {
     Chat(socket, "3d-programmering", '#chat4');
 });
 
-function Chat(socket, channel, chatId){
+function Chat(socket, channel, chatId) {
     console.log(`Socket connected: ${socket.id}`);
-    
+
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         var chats = db.db("chats");
