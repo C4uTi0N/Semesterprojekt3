@@ -1,11 +1,28 @@
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 13px;
-  color: #333
+  background: #8a7b8b;
 }
 
 p {
   padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  width: fit-content;
+  padding: 8px 15px;
+  margin: 15px auto;
+  font-family: papyrus;
+  font-size: xx-large;
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: #d6c7a7;
 }
 
 #wrapper {
@@ -24,9 +41,20 @@ p {
   margin: 5px;
   align-items: center;
   justify-content: center;
+  border: 1px ;
   border-radius: 10px;
-  border: 1px solid #eb521f;
-  background: #FF6633;
+  display: flex;
+  background: #706777;
+}
+
+#header button {
+  margin: 10px;
+  padding: 10px 20px;
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+  border-radius: 10px;
+  background: #c5aca4;
 }
 
 #contentwrap {
@@ -41,9 +69,9 @@ p {
   padding: 10px;
   display: flex;
   overflow: hidden;
+  border: 1px ;
   border-radius: 10px;
-  border: 1px solid #ebb0b0;
-  background: #FFC4C4;
+  background: #706777;
 }
 
 #leftcolumnwrap {
@@ -57,8 +85,8 @@ p {
   height: 810px;
   margin: 5px;
   border-radius: 10px;
-  border: 1px solid #1fb8eb;
-  background: #33CCFF;
+  border: 1px ;
+  background: #706777;
 }
 
 #rightcolumnwrap {
@@ -71,57 +99,94 @@ p {
 #rightcolumn {
   height: 810px;
   margin: 5px;
+  padding: 10px;
   border-radius: 10px;
-  border: 1px solid #b81feb;
-  background: #CC33FF;
+  border: 1px ;
+  background: #706777;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#userCard {
+  padding: 10px;
+  display: flex;
+  border-radius: 10px;
+  background: #93818f;
 }
 
-h1 {
-  padding: 0px 10px 10px 10px;
-  text-align: center;
+#avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 25px;
+  background: orange;
+}
+
+#userInfo {
+  margin-top: 10px;
+  color: white;
+  line-height: 5px;
+  display: block;
+}
+
+#userName {
+  font-size: large;
+  font-weight: bold;
+}
+
+#userStatus {
+  font-size: medium;
 }
 
 #leftcolumn button {
-  width: 95%;
-  margin: 5px;
+  width: 92%;
+  margin: 10px 0 0 10px;
   padding: 10px 20px;
   text-align: left;
   font-weight: bold;
   font-size: large;
-  background: orange;
-  border-radius: 25px;
+  border-radius: 10px;
+  background: #c5aca4;
 }
 
 .chat {
-  height: 755px;
+  height: 720px;
+  border-radius: 10px;
+  background: #93818f;
 }
 
 .chatInputs {
-  display: inline-flex;
+  padding: 5px;
+  margin-top: 42px;
+  border-radius: 10px;
+  display: flex;
+  background: #93818f;
 }
 
 .chat button {
-  font-weight: bold;
   width: 50px;
   height: 50px;
-  margin-top: 5px;
   font-size: 14px;
-  border-radius: 50%;
+  font-weight: bold;
+  border-radius: 10px;
+  background: #c5aca4;
 }
 
 .chat input {
-  width: 500px;
+  width: 600px;
   height: 50px;
-  margin-top: 5px;
-  overflow: scroll;
-  border-radius: 25px;
+  margin-left: 5px;
   padding: 8px;
+  border: 1px  #c5aca4;
+  border-radius: 10px;
+  overflow: scroll;
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  background: #93818f;
+}
+
+::placeholder {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
 }
 
 .messages {
@@ -130,23 +195,21 @@ h1 {
   padding: 10px;
   line-height: 20px;
   overflow-y: scroll;
-  border-radius: 20px;
+  border-radius: 10px;
   display: block;
-  background: lightslategray;
 }
 
 #message {
   font-size: 16px;
   margin: 4px;
   padding: 10px;
-  border-radius: 25px;
-  background: lightsteelblue;
+  border-radius: 10px;
+  background: #c5aca4;
 }
 
 #chat1 {
   visibility: visible;
   position: absolute;
-  ;
 }
 
 #chat2 {
