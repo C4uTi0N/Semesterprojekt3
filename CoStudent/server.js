@@ -13,7 +13,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use('/', (req, res) => {
-    res.render('index.html');
+    res.render('home.html');
 });
 
 let messages = [];

@@ -15,14 +15,26 @@ p {
 }
 
 h1 {
-  width: fit-content;
+  left: 830px;
+  width: 260px;
   padding: 8px 15px;
-  margin: 15px auto;
+  margin: 18px 0;
+  z-index: 1;
+  text-align: center;
   font-family: papyrus;
   font-size: xx-large;
   font-weight: bold;
   border-radius: 50px;
-  background-color: #d6c7a7;
+  display: flex;
+  position: absolute;
+  background-color: #c5aca4;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+h1 img {
+  margin: 5px 10px;
+  width: 42px;
+  height: 42px;
 }
 
 #wrapper {
@@ -39,22 +51,57 @@ h1 {
 #header {
   height: 100px;
   margin: 5px;
+  padding: 10px;
   align-items: center;
   justify-content: center;
-  border: 1px ;
-  border-radius: 10px;
-  display: flex;
+  border: 1px;
+  border-radius: 20px;
   background: #706777;
 }
 
-#header button {
+#headerButtons {
+  display: flex;
+}
+
+#headerButtons button {
+  width: 160px;
   margin: 10px;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 20px;
   text-align: left;
+  font-size: x-large;
   font-weight: bold;
-  font-size: large;
-  border-radius: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: whitesmoke;
   background: #c5aca4;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+#headerButtons button {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  transition: 0.25s;
+}
+
+#headerButtons button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 13px;
+  right: 5px;
+  transition: 0.25s;
+}
+
+#headerButtons button:hover {
+  padding-left: 15px;
+}
+
+#headerButtons button:hover:after {
+  opacity: 1;
+  right: 20px;
 }
 
 #contentwrap {
@@ -69,8 +116,8 @@ h1 {
   padding: 10px;
   display: flex;
   overflow: hidden;
-  border: 1px ;
-  border-radius: 10px;
+  border: 1px;
+  border-radius: 20px;
   background: #706777;
 }
 
@@ -84,9 +131,49 @@ h1 {
 #leftcolumn {
   height: 810px;
   margin: 5px;
-  border-radius: 10px;
-  border: 1px ;
+  border-radius: 20px;
+  border: 1px;
   background: #706777;
+}
+
+#leftcolumn button {
+  width: 92%;
+  margin: 10px 0 0 10px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px;
+  text-align: left;
+  transition: all 0.5s;
+  font-size: large;
+  cursor: pointer;
+  color: whitesmoke;
+  background: #c5aca4;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+#leftcolumn button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#leftcolumn button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 10px;
+  right: 10px;
+  transition: 0.25s;
+}
+
+#leftcolumn button:hover {
+  padding-left: 20px;
+}
+
+#leftcolumn button:hover:after {
+  opacity: 1;
+  right: 30px;
 }
 
 #rightcolumnwrap {
@@ -100,19 +187,20 @@ h1 {
   height: 810px;
   margin: 5px;
   padding: 10px;
-  border-radius: 10px;
-  border: 1px ;
+  border-radius: 20px;
+  border: 1px;
   background: #706777;
 }
 
 #userCard {
   padding: 10px;
   display: flex;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #93818f;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
-#avatar {
+#userAvatar img {
   width: 72px;
   height: 72px;
   border-radius: 25px;
@@ -135,29 +223,26 @@ h1 {
   font-size: medium;
 }
 
-#leftcolumn button {
-  width: 92%;
-  margin: 10px 0 0 10px;
-  padding: 10px 20px;
-  text-align: left;
-  font-weight: bold;
-  font-size: large;
-  border-radius: 10px;
-  background: #c5aca4;
-}
-
 .chat {
   height: 720px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #93818f;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
 .chatInputs {
   padding: 5px;
   margin-top: 42px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   background: #93818f;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+.chatInputs button img {
+  margin: 5px;
+  width: 32px;
+  height: 32px;
 }
 
 .chat button {
@@ -165,8 +250,10 @@ h1 {
   height: 50px;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 10px;
+  border: none;
+  border-radius: 20px;
   background: #c5aca4;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
 .chat input {
@@ -174,8 +261,8 @@ h1 {
   height: 50px;
   margin-left: 5px;
   padding: 8px;
-  border: 1px  #c5aca4;
-  border-radius: 10px;
+  border: 1px #c5aca4;
+  border-radius: 20px;
   overflow: scroll;
   font-size: medium;
   font-weight: bold;
@@ -195,7 +282,7 @@ h1 {
   padding: 10px;
   line-height: 20px;
   overflow-y: scroll;
-  border-radius: 10px;
+  border-radius: 20px;
   display: block;
 }
 
@@ -203,8 +290,9 @@ h1 {
   font-size: 16px;
   margin: 4px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #c5aca4;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
 }
 
 #chat1 {
@@ -234,11 +322,12 @@ h1 {
 }
 
 .messages::-webkit-scrollbar-track {
+  margin-top: 30px;
+  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
 }
 
 .messages::-webkit-scrollbar-thumb {
+  border-radius: 20px;
   background-color: #dfdfdf;
-  border-radius: 10px;
 }
