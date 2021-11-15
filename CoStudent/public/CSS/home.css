@@ -139,7 +139,7 @@ h1 img {
 #leftcolumn button {
   width: 92%;
   margin: 10px 0 0 10px;
-  padding: 10px 40px;
+  padding: 20px 40px;
   border: none;
   border-radius: 20px;
   text-align: left;
@@ -155,14 +155,14 @@ h1 img {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 #leftcolumn button:after {
   content: '»';
   position: absolute;
   opacity: 0;
-  top: 10px;
+  top: 20px;
   right: 10px;
   transition: 0.25s;
 }
