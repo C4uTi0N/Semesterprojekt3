@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoStudent - Hjem</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <link rel="stylesheet" href="../CSS/links.css" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="headerwrap">
+            <h1>CoStudent<img src="../Icons/Logo.png"></h1>
+            <div id="header">
+                <div id="headerButtons">
+                    <button onclick="location.href='homework'">Lektier</button>
+                    <button onclick="location.href='links'">Links</button>
+                </div>
+            </div>
+        </div>
+        <div id="leftcolumnwrap">
+            <div id="leftcolumn">
+                <button onclick="ChatToggle('chat1')">Læringsteknologi</button>
+                <button onclick="ChatToggle('chat2')">HW & Robotteknologi</button>
+                <button onclick="ChatToggle('chat3')">Web Programmering</button>
+                <button onclick="ChatToggle('chat4')">3D Programmering</button>
+            </div>
+        </div>
+        <div id="contentwrap">
+            <div id="content">
+                <form class="chat" id="chat1">
+                    <div class="messages" id="msgScroll">
+                    </div>
+                    <div class="chatInputs">
+                        <button type="submit">
+                            <img src="../Icons/Send.png">
+                        </button>
+                        <input type="text" name="message" placeholder="Message">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </form>
+                <form class="chat" id="chat2">
+                    <div class="messages"></div>
+                    <div class="chatInputs">
+                        <button type="submit">
+                            <img src="../Icons/Send.png">
+                        </button>
+                        <input type="text" name="message" placeholder="Message">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </form>
+                <form class="chat" id="chat3">
+                    <div class="messages"></div>
+                    <div class="chatInputs">
+                        <button type="submit">
+                            <img src="../Icons/Send.png">
+                        </button>
+                        <input type="text" name="message" placeholder="Message">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </form>
+                <form class="chat" id="chat4">
+                    <div class="messages"></div>
+                    <div class="chatInputs">
+                        <button type="submit">
+                            <img src="../Icons/Send.png">
+                        </button>
+                        <input type="text" name="message" placeholder="Message">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="rightcolumnwrap">
+            <div id="rightcolumn">
+                <div id="userCard">
+                    <div id="userAvatar">
+                        <img src="../Icons/Avatar.png" alt="">
+                    </div>
+                    <div id="userInfo">
+                        <p id="userName">User name</p>
+                        <p id="userStatus">User Status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>

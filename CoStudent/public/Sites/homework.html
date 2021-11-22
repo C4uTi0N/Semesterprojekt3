@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoStudent - Lektier</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <link rel="stylesheet" href="../CSS/homework.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="headerwrap">
+            <h1>CoStudent<img src="../Icons/Logo.png"></h1>
+            <div id="header">
+                <div id="headerButtons">
+                    <button onclick="location.href='home'">Hjem</button>
+                    <button onclick="location.href='links'">Links</button>
+                </div>
+            </div>
+        </div>
+        <div id="leftcolumnwrap">
+            <div id="leftcolumn">
+                <button onclick="WeekToggle('lastWeek')">Sidste Uge</button>
+                <button onclick="WeekToggle('thisWeek')">Denne Uge</button>
+                <button onclick="WeekToggle('nextWeek')">Næste Uge</button>
+            </div>
+        </div>
+        <div id="contentwrap">
+            <div id="content">
+                <form id="lastWeek">
+                    <h2>Sidste Uge</h2>
+                    <div id="days">
+                        <div>
+                            <div id="work">
+                                <h2>Mandag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Tirsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Onsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Torsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Fredag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form id="thisWeek">
+                    <h2>Denne Uge</h2>
+                    <div id="days">
+                        <div>
+                            <div id="work">
+                                <h2>Mandag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Tirsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Onsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Torsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Fredag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form id="nextWeek">
+                    <h2>Næste Uge</h2>
+                    <div id="days">
+                        <div>
+                            <div id="work">
+                                <h2>Mandag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Tirsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Onsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Torsdag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                        <div>
+                            <div id="work">
+                                <h2>Fredag</h2>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptas eum sunt molestias tenetur quidem autem odio tempore,
+                                minima odit natus! Eius, debitis.
+                                Explicabo aliquid enim illo laudantium, quam ipsa blanditiis.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="rightcolumnwrap">
+            <div id="rightcolumn">
+                <div id="userCard">
+                    <div id="userAvatar">
+                        <img src="../Icons/Avatar.png" alt="">
+                    </div>
+                    <div id="userInfo">
+                        <p id="userName">User name</p>
+                        <p id="userStatus">User Status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/homework.js"></script>
+</body>
+
+</html>
+
+</html>
