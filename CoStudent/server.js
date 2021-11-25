@@ -12,6 +12,10 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.get('/', (req, res) => {
+    res.redirect("/index")
+})
+
+app.get('/index', (req, res) => {
     res.render('index')
 })
 
