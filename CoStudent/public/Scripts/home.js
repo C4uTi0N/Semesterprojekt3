@@ -7,8 +7,11 @@ ChatManager('#chat4');
 
 function ChatManager(chatId) {
     function renderMessage(message) {
-        $(chatId).children('.messages').append('<div id = "message"><strong>' + message.user +
-            '</strong>: <p>' + message.message + '</div>');
+        $(chatId).children('.messages').append(
+            '<div id = "message"><strong>' + message.user + '</strong>: ' +
+            '<p>' + message.message + 
+            '<p><strong>Time: </strong>' + message.time +
+            '</div>');
     };
 
     socket.on(`receivedMessage${chatId}`, data => {
@@ -28,19 +31,21 @@ function ChatManager(chatId) {
 
         var user = $(chatId + ' input[name=username]').val();
         var message = $(chatId + ' input[name=message]').val();
+        var time = new Date($.now()).toString();
 
         if (user.length && message.length) {
             var messageObject = {
                 user: user,
-                message: message
+                message: message,
+                time: time
             };
 
             renderMessage(messageObject);
             socket.emit(`sendMessage${chatId}`, messageObject);
             console.log("Message sent!")
 
-            $('input[name=username]').val("");
-            $('input[name=message]').val("");
+            $(chatId + 'input[name=username]').val("");
+            $(chatId + 'input[name=message]').val("");
         }
     });
 }

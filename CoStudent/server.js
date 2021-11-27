@@ -51,7 +51,8 @@ function Chat(socket, channel, chatId) {
             projection: {
                 _id: 0,
                 user: 1,
-                message: 1
+                message: 1,
+                time: 1
             }
         }).toArray(function (err, messages) {
             if (err) throw err;
@@ -74,7 +75,7 @@ function Chat(socket, channel, chatId) {
             var chats = db.db("chats");
             chats.collection(channel).insertOne(data, function (err, res) {
                 if (err) throw err;
-                console.log(`1 document inserted:\n user: "${data.user}"\n message: "${data.message}"`);
+                console.log(`1 document inserted:\n user: "${data.user}"\n message: "${data.message}"\n time: ${data.time}\n`);
                 db.close();
             });
         });
