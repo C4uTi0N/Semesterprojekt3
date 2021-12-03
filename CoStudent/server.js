@@ -6,30 +6,16 @@ const path = require('path');
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/CSdb";
 
+let options = {
+    extensions: ["htm", "html"],
+    index: false,
+}
 
-app.set('views', path.join(__dirname, 'public/Sites'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.use(express.static("public", options))
 
 app.get('/', (req, res) => {
     res.redirect("/index")
 })
-
-app.get('/index', (req, res) => {
-    res.render('index')
-})
-
-app.get('/home', (req, res) => {
-    res.render('home');
-});
-
-app.get('/links', (req, res) => {
-    res.render('links');
-});
-
-app.get('/homework', (req, res) => {
-    res.render('homework');
-});
 
 
 let messages = [];
