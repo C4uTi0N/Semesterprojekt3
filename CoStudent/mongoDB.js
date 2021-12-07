@@ -5,6 +5,25 @@ MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     console.log("Database created!");
 
+    var accounts = db.db("accounts");
+    accounts.createCollection("users", function (err, res) {
+        if (err) throw err;
+        console.log("Collection users created!");
+        db.close();
+    });
+
+    var testUser = {
+        username: "user",
+        password: "1234"
+    }
+
+    accounts.collection("users").insertOne(testUser, function (err, res) {
+        if (err) throw err;
+        console.log("testUser document inserted");
+        db.close();
+    });
+
+
     var chats = db.db("chats");
     chats.createCollection("læringsteknologi", function (err, res) {
         if (err) throw err;

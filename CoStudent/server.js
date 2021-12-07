@@ -14,7 +14,7 @@ let options = {
 app.use(express.static("public", options))
 
 app.get('/', (req, res) => {
-    res.redirect("/index")
+    res.redirect("/login")
 })
 
 
