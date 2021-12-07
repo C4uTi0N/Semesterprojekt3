@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="login.css">
+
+<% if (messages.error) { %>
+<%= messages.error %>
+<% } %>
+
+<div id="wrapper">
+    <form id="loginForm" action="/login" method="POST">
+        <h1>CoStudent<img src="Icons/Logo.png"></h1>
+        <div id="inputs">
+            <h2>Login</h2>
+            <div class="group">
+                <input type="text" id="name" name="name" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Brugernavn</label>
+            </div>
+
+            <div class="group">
+                <input type="password" id="password" name="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Kodeord</label>
+            </div>
+            <button type="submit">Login</button>
+            <button><a href="/Register">Register</a></button>
+        </div>
+    </form>
+</div>
