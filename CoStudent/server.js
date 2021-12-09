@@ -12,11 +12,11 @@ const url = "mongodb://localhost:27017/CSdb";
 const initializePassport = require('./passport-config')
 initializePassport(
     passport, 
-    name => users.find(user => user.name === name),
-    id => users.find(user => user.id === id)
+    name => users.find(user => user.name == name),
+    id => users.find(user => user.id == id)
 )
 
-const users = []
+let users = []
 
 let options = {
     extensions: ["htm", "html"],
@@ -41,6 +41,23 @@ app.get('/', checkAuthenticated,(req, res) => {
 
 
 app.get('/login', (req, res) => {
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var accounts = db.db("accounts");
+        accounts.collection("users").find({}, {
+            projection: {
+                _id: 0,
+                id: 1,
+                name: 1,
+                password: 1
+            }
+        }).toArray(function (err, usersDB) {
+            if (err) throw err;
+            users = usersDB
+            console.log(users)
+            db.close();
+        });
+    });
     res.render('login.ejs')
 })
 
@@ -57,16 +74,26 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) =>{
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        users.push({
+
+        var user = {
             id: Date.now().toString(),
             name: req.body.name,
             password: hashedPassword
-        })
+        }
+
+        MongoClient.connect(url, function (err, db) {
+            if (err) throw err;
+            var accounts = db.db("accounts");
+            accounts.collection("users").insertOne(user, function (err, res) {
+                if (err) throw err;
+                console.log(`1 document inserted:\n ID: "${user.id}"\n Username: "${user.name}"\n Password: ${user.password}\n`);
+                db.close();
+            });
+        });
         res.redirect('/login')
     } catch {
         res.redirect('/register')
     }
-    console.log(users)
 })
 
 function checkAuthenticated(req, res, next){

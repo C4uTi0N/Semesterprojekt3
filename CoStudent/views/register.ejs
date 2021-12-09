@@ -1,16 +1,25 @@
 <link rel="stylesheet" href="register.css">
-<h1>Register</h1>
-<form action="/register" method="POST">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Register</button>
 
+<div id="wrapper">
+    <form id="loginForm" action="/register" method="POST">
+        <h1>CoStudent<img src="Icons/Logo.png"></h1>
+        <div id="inputs">
+            <h2>Opret bruger</h2>
+            <div class="group">
+                <input type="text" id="name" name="name" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Brugernavn</label>
+            </div>
 
-</form>
-<a href="/login">Login</a>
+            <div class="group">
+                <input type="password" id="password" name="password" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Kodeord</label>
+            </div>
+            <button type="submit">Opret</button>
+            <button><a href="/login">Tilbage til Login</a></button>
+        </div>
+    </form>
+</div>
