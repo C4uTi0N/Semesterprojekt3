@@ -1,0 +1,279 @@
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background: #8a7b8b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a {
+    color: whitesmoke;
+}
+
+h1 {
+    padding: 8px 10px;
+    margin: 0 145px 20px;
+    text-align: center;
+    font-family: papyrus;
+    font-size: xx-large;
+    font-weight: bold;
+    display: flex;
+    border-radius: 50px;
+    background-color: #c5aca4;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+h1 img {
+    margin: 5px 10px;
+    width: 42px;
+    height: 42px;
+}
+
+h2 {
+    padding: 10px;
+    margin: 0 120px 10px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #c5aca4;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+button {
+    width: 98%;
+    margin: 10px 0;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 20px;
+    text-align: left;
+    transition: all 0.5s;
+    font-size: x-large;
+    cursor: pointer;
+    color: whitesmoke;
+    background: #c5aca4;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+#wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#loginForm {
+    width: 30%;
+    height: auto;
+    padding: 20px;
+    margin: 90px auto;
+    border-radius: 20px;
+    background: #706777;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+#loginForm button {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.25s;
+}
+
+#loginForm button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 20px;
+    right: 10px;
+    transition: 0.25s;
+}
+
+#loginForm button:hover {
+    padding-left: 20px;
+}
+
+#loginForm button:hover:after {
+    opacity: 1;
+    right: 30px;
+}
+
+#inputs {
+    width: 98%;
+    height: auto;
+    margin: 10px 0 10px 10px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    background: #8a7b8b;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+#inputs p {
+    margin-top: 30px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/* basic stylings ------------------------------------------ */
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h2 small {
+    font-weight: normal;
+    color: #888;
+    display: block;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer a {
+    color: #53B2C8;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+    color: whitesmoke;
+    padding: 5px;
+    margin: 0 50px;
+    position: relative;
+    margin-bottom: 45px;
+    background: #c5aca4;
+    border-radius: 20px;
+}
+
+input {
+    margin-left: 15px;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    background: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* LABEL ======================================= */
+label {
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input:focus~label,
+input:valid~label {
+    top: -30px;
+    font-size: large;
+    color: #333333;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    margin-left: 15px;
+    position: relative;
+    display: block;
+    width: 300px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #333333;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input:focus~.bar:before,
+input:focus~.bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+input:focus~.highlight {
+    margin-left: 15px;
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #333333;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #333333;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
