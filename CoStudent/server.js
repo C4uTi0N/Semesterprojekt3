@@ -34,7 +34,6 @@ app.get('/', checkAuthenticated,(req, res) => {
     res.render('index.ejs', {name: req.user.name})
 })
 
-
 app.get('/login', (req, res) => {
     MongoClient.connect(url, function (err, db) {
         if (err) throw err;
