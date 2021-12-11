@@ -18,13 +18,8 @@ initializePassport(
 
 let users = []
 
-let options = {
-    extensions: ["htm", "html"],
-    index: false,
-}
-
 app.set('view-engine', 'ejs')
-app.use(express.static("views", options))
+app.use(express.static("views"))
 app.use(express.urlencoded({ extended: false}))
 app.use(flash())
 app.use(session({
@@ -69,6 +64,10 @@ app.post('/login', passport.authenticate('local', {
 
 app.get('/register', (req, res) => {
     res.render('register.ejs')
+})
+
+app.get('/home', checkAuthenticated, (req, res) => {
+    res.render('home.ejs', {name: req.user.name})
 })
 
 app.post('/register', async (req, res) =>{

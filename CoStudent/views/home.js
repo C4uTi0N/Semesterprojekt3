@@ -29,11 +29,11 @@ function ChatManager(chatId) {
         event.preventDefault();
         console.log(event);
 
-        var user = $(chatId + ' input[name=username]').val();
+        var user = $('button[name=userName]').val();
         var message = $(chatId + ' input[name=message]').val();
         var time = new Date($.now()).toString();
 
-        if (user.length && message.length) {
+        if (message.length) {
             var messageObject = {
                 user: user,
                 message: message,
