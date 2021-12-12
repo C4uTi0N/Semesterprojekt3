@@ -1,15 +1,38 @@
 var socket = io('http://localhost:3000');
 
+UserList();
+
 ChatManager('#chat1');
 ChatManager('#chat2');
 ChatManager('#chat3');
 ChatManager('#chat4');
 
+function UserList() {
+    function renderUser(user) {
+        $('#rightcolumn').children('.userCards').append(
+            '<div id="userCard">' +
+            '<div id="userAvatar">' +
+            '<img src="Icons/Avatar.png" alt="">' +
+            '</div>' +
+            '<div id="userInfo">' +
+            '<p id="userName">' + user.name + '</p>' +
+            '<p id="userStatus">user.status</p>' +
+            '</div>' +
+            '</div>');
+    };
+
+    socket.on(`loadUsers`, function (userNames) {
+        for (user of userNames) {
+            renderUser(user);
+        }
+    });
+}
+
 function ChatManager(chatId) {
     function renderMessage(message) {
         $(chatId).children('.messages').append(
-            '<div id = "message"><strong>' + message.user + '</strong>: ' +
-            '<p>' + message.message + 
+            '<div id="message"><strong>' + message.user + '</strong>: ' +
+            '<p>' + message.message +
             '<p><strong>Time: </strong>' + message.time +
             '</div>');
     };

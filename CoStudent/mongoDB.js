@@ -13,7 +13,7 @@ MongoClient.connect(url, function (err, db) {
     });
 
     var testUser = {
-        username: "user",
+        name: "user",
         password: "1234"
     }
 

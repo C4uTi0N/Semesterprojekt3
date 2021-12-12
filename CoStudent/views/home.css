@@ -200,14 +200,21 @@ h1 img {
 #rightcolumn {
   height: 810px;
   margin: 5px;
-  padding: 10px;
   border-radius: 20px;
   border: 1px;
   background: #706777;
 }
 
+.userCards {
+  height: 810px;
+  padding: 10px;
+  overflow-y: scroll;
+  border-radius: 20px;
+}
+
 #userCard {
   padding: 10px;
+  margin-bottom: 5px;
   display: flex;
   border-radius: 20px;
   background: #93818f;
@@ -357,6 +364,22 @@ h1 img {
 }
 
 .messages::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #dfdfdf;
+}
+
+.userCards::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.userCards::-webkit-scrollbar-track {
+  margin: 15px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.userCards::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: #dfdfdf;
 }

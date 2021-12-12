@@ -11,16 +11,19 @@ const url = "mongodb://localhost:27017/CSdb";
 
 const initializePassport = require('./passport-config')
 initializePassport(
-    passport, 
+    passport,
     name => users.find(user => user.name == name),
     id => users.find(user => user.id == id)
 )
 
 let users = []
+let userNames = []
 
 app.set('view-engine', 'ejs')
 app.use(express.static("views"))
-app.use(express.urlencoded({ extended: false}))
+app.use(express.urlencoded({
+    extended: false
+}))
 app.use(flash())
 app.use(session({
     secret: "secret",
@@ -30,8 +33,10 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/', checkAuthenticated,(req, res) => {
-    res.render('index.ejs', {name: req.user.name})
+app.get('/', checkAuthenticated, (req, res) => {
+    res.render('index.ejs', {
+        name: req.user.name
+    })
 })
 
 app.get('/login', (req, res) => {
@@ -47,7 +52,7 @@ app.get('/login', (req, res) => {
             }
         }).toArray(function (err, usersDB) {
             if (err) throw err;
-            users = usersDB
+            users = usersDB;
             console.log(users)
             db.close();
         });
@@ -66,10 +71,27 @@ app.get('/register', (req, res) => {
 })
 
 app.get('/home', checkAuthenticated, (req, res) => {
-    res.render('home.ejs', {name: req.user.name})
+    res.render('home.ejs', {name: req.user.name});
+
+    MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var accounts = db.db("accounts");
+        accounts.collection("users").find({}, {
+            projection: {
+                _id: 0,
+                id: 0,
+                password: 0
+            }
+        }).toArray(function (err, userNamesDB) {
+            if (err) throw err;
+            userNames = userNamesDB;
+            console.log(userNames)
+            db.close();
+        });
+    });
 })
 
-app.post('/register', async (req, res) =>{
+app.post('/register', async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
 
@@ -94,8 +116,8 @@ app.post('/register', async (req, res) =>{
     }
 })
 
-function checkAuthenticated(req, res, next){
-    if (req.isAuthenticated()){
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
         return next()
     }
 
@@ -105,6 +127,7 @@ function checkAuthenticated(req, res, next){
 let messages = [];
 
 io.on('connection', socket => {
+    socket.emit(`loadUsers`, userNames);
     Chat(socket, "læringsteknologi", '#chat1');
     Chat(socket, "hw-&-robotteknologi", '#chat2');
     Chat(socket, "web-programmering", '#chat3');

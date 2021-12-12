@@ -12,7 +12,9 @@
                 <button onclick="location.href='links'">Links</button>
             </div>
             <div id="headerName">
-                <button name="userName" value="<%= name %>"><h2><%= name %></h2></button>
+                <button name="userName" value="<%= name %>">
+                    <h2><%= name %></h2>
+                </button>
             </div>
         </div>
     </div>
@@ -67,15 +69,7 @@
     </div>
     <div id="rightcolumnwrap">
         <div id="rightcolumn">
-            <div id="userCard">
-                <div id="userAvatar">
-                    <img src="Icons/Avatar.png" alt="">
-                </div>
-                <div id="userInfo">
-                    <p id="userName">User name</p>
-                    <p id="userStatus">User Status</p>
-                </div>
-            </div>
+            <div class="userCards"></div>
         </div>
     </div>
 </div>
