@@ -12,18 +12,6 @@ MongoClient.connect(url, function (err, db) {
         db.close();
     });
 
-    var testUser = {
-        name: "user",
-        password: "1234"
-    }
-
-    accounts.collection("users").insertOne(testUser, function (err, res) {
-        if (err) throw err;
-        console.log("testUser document inserted");
-        db.close();
-    });
-
-
     var chats = db.db("chats");
     chats.createCollection("læringsteknologi", function (err, res) {
         if (err) throw err;
@@ -46,35 +34,6 @@ MongoClient.connect(url, function (err, db) {
     chats.createCollection("3d-programmering", function (err, res) {
         if (err) throw err;
         console.log("Collection 3d-programmering created!");
-        db.close();
-    });
-
-    var sampleMsg = {
-        user: "User Name",
-        message: "Message text"
-    };
-    
-    chats.collection("læringsteknologi").insertOne(sampleMsg, function (err, res) {
-        if (err) throw err;
-        console.log("sample document inserted");
-        db.close();
-    });
-
-    chats.collection("hw-&-robotteknologi").insertOne(sampleMsg, function (err, res) {
-        if (err) throw err;
-        console.log("sample document inserted");
-        db.close();
-    });
-
-    chats.collection("web-programmering").insertOne(sampleMsg, function (err, res) {
-        if (err) throw err;
-        console.log("sample document inserted");
-        db.close();
-    });
-
-    chats.collection("3d-programmering").insertOne(sampleMsg, function (err, res) {
-        if (err) throw err;
-        console.log("sample document inserted");
         db.close();
     });
 });
